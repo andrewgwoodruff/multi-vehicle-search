@@ -36,7 +36,7 @@ if config_env() == :prod do
   config :multi_vehicle_search, :dns_cluster_query, System.get_env("DNS_CLUSTER_QUERY")
 
   config :multi_vehicle_search, MultiVehicleSearchWeb.Endpoint,
-    url: [host: host, port: 80, scheme: "http"],
+    url: [host: host, port: 443, scheme: "https"],
     http: [
       # Enable IPv6 and bind on all interfaces.
       # Set it to  {0, 0, 0, 0, 0, 0, 0, 1} for local network only access.
@@ -46,8 +46,7 @@ if config_env() == :prod do
       port: port
     ],
     secret_key_base: secret_key_base,
-    server: true,
-    force_ssl: false
+    server: true
 
   # ## SSL Support
   #
