@@ -23,8 +23,7 @@ defmodule MultiVehicleSearch.Listings do
   end
 
   defp load_listings do
-    "/app"
-    |> Path.join("listings.json")
+    "listings.json"
     |> File.read!()
     |> Jason.decode!(keys: :atoms)
     |> Enum.map(fn listing ->

@@ -46,9 +46,9 @@ RUN mkdir config
 COPY config/config.exs config/${MIX_ENV}.exs config/
 RUN mix deps.compile
 
-COPY listings.json /app/listings.json
-
 COPY priv priv
+
+COPY listings.json listings.json
 
 COPY lib lib
 
