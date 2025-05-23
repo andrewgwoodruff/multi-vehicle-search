@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu
+
+cd -P -- "$(dirname -- "$0")"
+exec ./multi_vehicle_search eval MultiVehicleSearch.Release.migrate
