@@ -119,7 +119,7 @@ defmodule MultiVehicleSearch.Listings do
       %{width: _width} = _listing, {_, []} ->
         {:halt, true}
 
-      %{length: length_available, width: width_available} = listing, {_, vehicles} ->
+      %{length: length_available, width: width_available}, {_, vehicles} ->
         vehicles
         |> Enum.reduce_while(
           {length_available, width_available, width_available, vehicles},
@@ -146,7 +146,7 @@ defmodule MultiVehicleSearch.Listings do
     end)
     |> case do
       true -> true
-      {false, shiz} -> false
+      {false, _} -> false
     end
   end
 
