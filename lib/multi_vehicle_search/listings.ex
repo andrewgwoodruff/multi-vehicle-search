@@ -23,12 +23,14 @@ defmodule MultiVehicleSearch.Listings do
   end
 
   defp load_listings do
-    "listings.json"
-    |> File.read!()
-    |> Jason.decode!(keys: :atoms)
-    |> Enum.map(fn listing ->
-      struct(Listing, listing)
-    end)
+    # "listings.json"
+    # |> File.read!()
+    # |> Jason.decode!(keys: :atoms)
+    # |> Enum.map(fn listing ->
+    #   struct(Listing, listing)
+    # end)
+
+    []
   end
 
   defp search_locations(vehicles, listings) do
