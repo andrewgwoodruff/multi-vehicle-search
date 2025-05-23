@@ -48,8 +48,6 @@ RUN mix deps.compile
 
 COPY priv priv
 
-COPY listings.json listings.json
-
 COPY lib lib
 
 # Compile the release
@@ -85,7 +83,6 @@ ENV MIX_ENV="prod"
 
 # Only copy the final release from the build stage
 COPY --from=builder --chown=nobody:root /app/_build/${MIX_ENV}/rel/multi_vehicle_search ./
-COPY --from=builder /app/listings.json /app/listings.json
 
 USER nobody
 
