@@ -7,6 +7,8 @@ defmodule MultiVehicleSearchWeb.Router do
 
   scope "/api", MultiVehicleSearchWeb do
     pipe_through :api
+
+    post "/", LocationController, :search_locations
   end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
